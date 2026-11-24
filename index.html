@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cangre Burger's - Carta Premium</title>
+    <style>
+        :root {
+            --primario: #a30000; 
+            --secundario: #ffcc00; 
+            --fondo: #0a0a0a; 
+            --texto: #f4f4f4;
+            --tarjeta: #151515;
+            --verde: #4caf50;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--fondo); margin: 0; padding: 0; padding-bottom: 90px; color: var(--texto); }
+        .banner { background: linear-gradient(90deg, var(--primario), #ff0000); color: white; text-align: center; padding: 12px; font-weight: 900; font-size: 15px; text-transform: uppercase; position: sticky; top: 0; z-index: 100; }
+        header { background-color: #000; text-align: center; padding: 20px 10px; border-bottom: 4px solid var(--secundario); }
+        .logo-img { width: 95%; max-width: 350px; border-radius: 15px; box-shadow: 0 0 25px rgba(255, 204, 0, 0.4); }
+        .info-local { text-align: center; font-size: 13px; color: #ccc; padding: 15px; background: #111; line-height: 1.6; border-bottom: 1px solid #333; }
+        .carrusel { display: flex; overflow-x: auto; gap: 10px; padding: 15px; background: #111; border-bottom: 2px solid var(--secundario); }
+        .carrusel img { width: 80%; flex-shrink: 0; height: 240px; object-fit: cover; border-radius: 12px; border: 2px solid #333; }
+        .contenedor { padding: 15px; max-width: 600px; margin: 0 auto; }
+        .categoria { font-size: 22px; color: var(--secundario); margin: 30px 0 15px 0; text-transform: uppercase; text-align: center; font-weight: 900; }
+        .tarjeta { background: var(--tarjeta); border-radius: 15px; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.8); overflow: hidden; border: 1px solid #333; }
+        .foto { width: 100%; height: 260px; object-fit: cover; border-bottom: 3px solid var(--primario); background-color: #222; }
+        .cuerpo { padding: 15px; }
+        .titulo { font-size: 20px; font-weight: 900; margin: 0 0 5px 0; color: white; text-transform: uppercase; }
+        .desc { font-size: 13px; color: #aaa; margin-bottom: 12px; }
+        .precios { background: #000; padding: 12px; border-radius: 10px; margin-bottom: 12px; border: 1px dashed #555; }
+        .p-normal { font-size: 15px; color: #ccc; display: block; margin-bottom: 5px; }
+        .p-local { font-size: 20px; color: var(--verde); font-weight: 900; display: block; }
+        .controles { display: flex; justify-content: space-between; align-items: center; background: #222; border-radius: 10px; padding: 5px; border: 1px solid #333; }
+        .btn { background: var(--primario); border: none; font-size: 22px; font-weight: bold; color: white; width: 45px; height: 45px; border-radius: 8px; cursor: pointer; }
+        .cant { font-size: 20px; font-weight: bold; color: white; }
+        .flotante { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: #25D366; color: white; font-size: 18px; font-weight: bold; padding: 15px 25px; border-radius: 50px; border: none; cursor: pointer; display: flex; align-items: center; width: 90%; max-width: 400px; justify-content: center; z-index: 1000; }
+        .contador { background: white; color: #25D366; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; margin-left: 15px; font-size: 16px; font-weight: bold; }
+        .footer { text-align: center; font-size: 13px; color: #888; padding: 30px 20px; background: #000; margin-top: 30px; border-top: 3px solid var(--primario); }
+        .footer a { color: var(--secundario); text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; transition: opacity 0.2s; }
+        .footer a:hover { opacity: 0.8; }
+        .footer .whatsapp-icon { font-size: 16px; }
+        .footer .pedidos { font-size: 15px; color: #ddd; margin-bottom: 10px; display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="banner">🎉 15% DE DESCUENTO EN LOCAL</div>
+
+    <header>
+        <img src="https://i.supaimg.com/36486e8d-34bf-4184-99c9-487ee56e4470/f1c10ae9-e0c0-41d7-a612-2c6c9be740de.jpg" class="logo-img" alt="Logo">
+    </header>
+
+    <div class="info-local">
+        🕔 Horario: 5:00 PM – 12:00 AM <br>
+        📍 Amado Estévez / Carretera Central y Av. Frank País.
+    </div>
+
+    <div class="carrusel">
+        <img src="https://i.supaimg.com/36486e8d-34bf-4184-99c9-487ee56e4470/79be9013-042d-4e9d-a86d-32d99e62313f.jpg" alt="Local 1">
+        <img src="https://i.supaimg.com/36486e8d-34bf-4184-99c9-487ee56e4470/e8b9820b-c0d3-4c65-810f-dc6df1017dad.jpg" alt="Local 2">
+        <img src="https://i.supaimg.com/36486e8d-34bf-4184-99c9-487ee56e4470/1a30af57-c981-43b0-994e-f9ddad469710.jpg" alt="Local 3">
+    </div>
+
+    <div class="contenedor">
+        
+        <div class="categoria">Hamburguesas</div>
+
+        <!-- 1. Cangre Exclusiva -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/api/storage/file?key=anon%2F-%2F8204758977986-ddf065f0-dba2-46a7-8424-ff0190c77a83-WhatsApp_Image_2026-11-21_at_1.51.59_AM.jpeg" class="foto" alt="Cangre Exclusiva">
+            <div class="cuerpo">
+                <div class="titulo">1. Cangre Exclusiva</div>
+                <div class="desc">Pan, carne, jamón viking, queso, vegetales y salsa.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio Online: $1,150.00</span>
+                    <span class="p-local">En Local: $1,000.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(1, -1)">-</button>
+                    <div class="cant" id="c-1">0</div>
+                    <button class="btn" onclick="cambiar(1, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Cangre Clásica de Queso -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/api/storage/file?key=anon%2F-%2F8204758927620-78a0c867-8958-462b-b3f6-a6bcb8897d47-WhatsApp_Image_2026-11-21_at_1.51.58_AM.jpeg" class="foto" alt="Cangre Clásica de Queso">
+            <div class="cuerpo">
+                <div class="titulo">2. Cangre Clásica de Queso</div>
+                <div class="desc">Doble carne, doble queso, vegetales frescos y salsa.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio Online: $1,550.00</span>
+                    <span class="p-local">En Local: $1,500.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(2, -1)">-</button>
+                    <div class="cant" id="c-2">0</div>
+                    <button class="btn" onclick="cambiar(2, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Cangre Tocineta -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/api/storage/file?key=anon%2F-%2F8204758897506-4a240245-067e-45e6-9d16-eaa1aeacfbb7-WhatsApp_Image_2026-11-21_at_1.52.00_AM.jpeg" class="foto" alt="Cangre Tocineta">
+            <div class="cuerpo">
+                <div class="titulo">3. Cangre Tocineta</div>
+                <div class="desc">Carne, jamón pierna, doble queso, tocineta y salsa.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio Online: $1,850.00</span>
+                    <span class="p-local">En Local: $1,700.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(3, -1)">-</button>
+                    <div class="cant" id="c-3">0</div>
+                    <button class="btn" onclick="cambiar(3, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Cangre Burger's -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/api/storage/file?key=anon%2F-%2F8204758840700-8f21d11e-0f8a-47df-9128-fa0414604aa7-WhatsApp_Image_2026-11-21_at_1.52.02_AM.jpeg" class="foto" alt="Cangre Burger's">
+            <div class="cuerpo">
+                <div class="titulo">4. Cangre Burger's</div>
+                <div class="desc">Doble carne, cerdo asado, jamón viking, doble queso y salsa.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio Online: $2,250.00</span>
+                    <span class="p-local">En Local: $2,100.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(4, -1)">-</button>
+                    <div class="cant" id="c-4">0</div>
+                    <button class="btn" onclick="cambiar(4, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">Cerdo Asado</div>
+
+        <!-- 5. Súper Bocadito de Cerdo -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/api/storage/file?key=anon%2F-%2F8204758765996-b152f759-7ee6-444e-ad37-75f41c48f339-WhatsApp_Image_2026-11-21_at_1.51.46_AM.jpeg" class="foto" alt="Súper Bocadito de Cerdo">
+            <div class="cuerpo">
+                <div class="titulo">Súper Bocadito de Cerdo</div>
+                <div class="desc">Pan artesanal y jugosa carne de cerdo a la brasa.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio Online: $1,150.00</span>
+                    <span class="p-local">En Local: $1,000.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(5, -1)">-</button>
+                    <div class="cant" id="c-5">0</div>
+                    <button class="btn" onclick="cambiar(5, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">Picaderas</div>
+
+        <!-- 6. Croquetas -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/i/h15tr9o4.jpg" class="foto" alt="Croquetas Crujientes">
+            <div class="cuerpo">
+                <div class="titulo">Croquetas Crujientes</div>
+                <div class="desc">Crujientes por fuera, tiernas por dentro.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio Online: $750.00</span>
+                    <span class="p-local">En Local: $600.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(6, -1)">-</button>
+                    <div class="cant" id="c-6">0</div>
+                    <button class="btn" onclick="cambiar(6, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Bolitas de Queso -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/i/0no80qi9.jpg" class="foto" alt="Bolitas de Queso">
+            <div class="cuerpo">
+                <div class="titulo">Bolitas de Queso</div>
+                <div class="desc">Queso fundido en cada bocado.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio Online: $950.00</span>
+                    <span class="p-local">En Local: $800.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(7, -1)">-</button>
+                    <div class="cant" id="c-7">0</div>
+                    <button class="btn" onclick="cambiar(7, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">Batidos Tropicales</div>
+
+        <!-- 8. Batido Cremoso -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/i/oamc7kcx.jpg" class="foto" alt="Batido Cremoso">
+            <div class="cuerpo">
+                <div class="titulo">Batido Cremoso (12 oz)</div>
+                <div class="desc">Preparado con la fruta tropical del momento.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio:</span>
+                    <span class="p-local">$600.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(8, -1)">-</button>
+                    <div class="cant" id="c-8">0</div>
+                    <button class="btn" onclick="cambiar(8, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">Enlatados y Bebidas</div>
+
+        <!-- 9. Refresco Enlatado -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/i/ugciuio9.jpg" class="foto" alt="Refresco Enlatado">
+            <div class="cuerpo">
+                <div class="titulo">Refresco Enlatado</div>
+                <div class="desc">Bien frío.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio:</span>
+                    <span class="p-local">$650.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(9, -1)">-</button>
+                    <div class="cant" id="c-9">0</div>
+                    <button class="btn" onclick="cambiar(9, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. Cerveza Cristal -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/i/a6ayl4kt.jpg" class="foto" alt="Cerveza Cristal">
+            <div class="cuerpo">
+                <div class="titulo">Cerveza Cristal</div>
+                <div class="desc">Bien fría.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio:</span>
+                    <span class="p-local">$850.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(10, -1)">-</button>
+                    <div class="cant" id="c-10">0</div>
+                    <button class="btn" onclick="cambiar(10, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. Néctar de Jugos -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/i/b728t957.webp" class="foto" alt="Néctar de Jugos">
+            <div class="cuerpo">
+                <div class="titulo">Néctar de Jugos</div>
+                <div class="desc">Jugo natural de frutas.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio:</span>
+                    <span class="p-local">$900.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(11, -1)">-</button>
+                    <div class="cant" id="c-11">0</div>
+                    <button class="btn" onclick="cambiar(11, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. Jugo de Cajita -->
+        <div class="tarjeta">
+            <img src="https://imagetourl.im/i/cziqlk28.jpg" class="foto" alt="Jugo de Cajita">
+            <div class="cuerpo">
+                <div class="titulo">Jugo de Cajita</div>
+                <div class="desc">Práctico y refrescante.</div>
+                <div class="precios">
+                    <span class="p-normal">Precio:</span>
+                    <span class="p-local">$450.00</span>
+                </div>
+                <div class="controles">
+                    <button class="btn" onclick="cambiar(12, -1)">-</button>
+                    <div class="cant" id="c-12">0</div>
+                    <button class="btn" onclick="cambiar(12, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <span class="pedidos">📞 Pedidos: 56087076</span>
+        <a href="https://chat.whatsapp.com/IPWvHMK0uR5BA3soP4BI5a?s=cl&p=a&mlu=4&ilr=4&iam=2" target="_blank" rel="noopener noreferrer">
+            <span class="whatsapp-icon">💬</span> Únete a nuestro grupo de WhatsApp
+        </a>
+    </div>
+
+    <button class="flotante" onclick="enviarWhatsApp()">
+        Hacer Pedido 
+        <div class="contador" id="badge">0</div>
+    </button>
+
+    <script>
+        var tel = "5356087076"; 
+        
+        var productos = {
+            1: { nombre: "Cangre Exclusiva", precioOnline: 1150, precioLocal: 1000 },
+            2: { nombre: "Cangre Clásica de Queso", precioOnline: 1550, precioLocal: 1500 },
+            3: { nombre: "Cangre Tocineta", precioOnline: 1850, precioLocal: 1700 },
+            4: { nombre: "Cangre Burger's", precioOnline: 2250, precioLocal: 2100 },
+            5: { nombre: "Súper Bocadito de Cerdo", precioOnline: 1150, precioLocal: 1000 },
+            6: { nombre: "Croquetas Crujientes", precioOnline: 750, precioLocal: 600 },
+            7: { nombre: "Bolitas de Queso", precioOnline: 950, precioLocal: 800 },
+            8: { nombre: "Batido Cremoso", precioOnline: 600, precioLocal: 600 },
+            9: { nombre: "Refresco Enlatado", precioOnline: 650, precioLocal: 650 },
+            10: { nombre: "Cerveza Cristal", precioOnline: 850, precioLocal: 850 },
+            11: { nombre: "Néctar de Jugos", precioOnline: 900, precioLocal: 900 },
+            12: { nombre: "Jugo de Cajita", precioOnline: 450, precioLocal: 450 }
+        };
+
+        var carrito = { 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0, 11:0, 12:0 };
+
+        function cambiar(id, cambio) {
+            var nuevaCant = carrito[id] + cambio;
+            if (nuevaCant < 0) nuevaCant = 0;
+            carrito[id] = nuevaCant;
+            document.getElementById("c-" + id).innerHTML = nuevaCant;
+            actualizarContador();
+        }
+
+        function actualizarContador() {
+            var total = 0;
+            for (var id in carrito) { total += carrito[id]; }
+            document.getElementById("badge").innerHTML = total;
+        }
+
+        function enviarWhatsApp() {
+            var mensaje = "¡Hola Cangre Burger's! Quiero hacer el siguiente pedido:\n\n";
+            var total = 0;
+            var hay = false;
+
+            for (var id in carrito) {
+                if (carrito[id] > 0) {
+                    hay = true;
+                    var cant = carrito[id];
+                    var prod = productos[id];
+                    var subtotal = cant * prod.precioOnline;
+                    total += subtotal;
+                    mensaje += "✅ " + cant + "x " + prod.nombre + " ($" + subtotal + ")\n";
+                }
+            }
+
+            if (!hay) {
+                alert("¡Oye! No has seleccionado nada todavía.");
+                return;
+            }
+
+            mensaje += "\n💰 *Total (Online): $" + total + ".00*";
+            mensaje += "\n\n⚠️ Si el consumo es en el local, aplicamos el descuento especial.";
+            
+            var url = "https://wa.me/" + tel + "?text=" + encodeURIComponent(mensaje);
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
